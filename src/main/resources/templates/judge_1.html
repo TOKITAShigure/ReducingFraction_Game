@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="js">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+        <title>Judge</title>
+    </head>
+
+    <body>
+
+        <!-- タイマー -->
+        <p class="timer" id="countdown"></p>
+
+        <!-- 問題の分数表示-->
+        <th:block th:object="${JRF}"> 
+
+            <div style="text-align:center">
+            
+                <p class="number" th:text="*{numerator}"></p>
+
+                <p class="number" th:text="*{denominator}"></p>
+
+            </div>
+
+        </th:block>
+
+
+        <!-- 回答送信用ボタン-->
+        <form method="post" th:action="@{/judge_1}">
+
+            <div style="text-align:center">
+                <button class="button_judge" type="submit" name="ReducingFraction" value="possible">約分できる</button>
+                <button class="button_judge" type="submit" name="ReducingFraction" value="impossible">約分できない</button>
+            </div>
+
+        </form>
+
+    </body>
+    
+    <!-- カウントダウン用javascript -->
+    <script th:inline="javascript">
+
+        window.onload=function(){
+            const countDown=document.getElementById('countdown'); 
+
+            function updateCountDown(){
+
+                const now=new Date().getTime();
+                const gap=[[ ${current_time} ]]-now;
+
+
+                const seconds=Math.floor((gap%(1000 * 60))/1000);
+
+                if(seconds<=40){
+                    window.location="/result";
+                }
+
+                countDown.textContent = `${String(seconds).padStart(2, '0')}`;
+            }
+
+            const interval = setInterval(updateCountDown, 1000);
+            updateCountDown();
+        }
+
+    </script>
+
+</html>

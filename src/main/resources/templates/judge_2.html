@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8" http-equiv="refresh" content="1; url=/judge_1">
+        <link rel="stylesheet" href="/style.css">
+        <title>Judge</title>
+    </head>
+
+    <body>
+
+        <!-- 正解の場合 -->
+        <div th:if="${errata}" class="block_correct">
+
+            <p class="timer" id="countdown"></p>        
+
+            <th:block th:object="${JRF}"> 
+
+                <div style="text-align:center">
+            
+                    <p class="number" th:text="*{numerator}"></p>
+
+                    <p class="number" th:text="*{denominator}"></p>
+
+                </div>
+
+            </th:block>
+
+        
+        </div>
+
+
+        <!-- 不正解の場合 -->
+        <div th:unless="${errata}" class="block_incorrect">
+
+            <p class="timer" id="countdown"></p>        
+
+            <th:block th:object="${JRF}"> 
+
+                <div style="text-align:center">
+            
+                    <p class="number" th:text="*{numerator}"></p>
+
+                    <p class="number" th:text="*{denominator}"></p>
+
+                </div>
+
+            </th:block>
+
+        </div>
+
+
+    </body>
+
+
+    <!-- カウントダウン用javascript -->
+    <script th:inline="javascript">
+
+        window.onload=function(){
+            const countDown=document.getElementById('countdown'); 
+
+            function updateCountDown(){
+
+                const now=new Date().getTime();
+                const gap=[[ ${current_time} ]]-now;
+
+
+                const seconds=Math.floor((gap%(1000 * 60))/1000);
+
+                if(seconds<=40){
+                    window.location="/result";
+                }
+
+                countDown.textContent = `${String(seconds).padStart(2, '0')}`;
+            }
+
+            const interval = setInterval(updateCountDown, 1000);
+            updateCountDown();
+        }
+
+    </script>
+
+</html>
+

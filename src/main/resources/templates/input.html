@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+
+<html xmlns:th="http://www.thymeleaf.org" lang="js">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/style.css">
+        <title>Input</title>
+
+    </head>
+
+    <body>
+
+            <!-- 最大分母と最大分子を送信-->
+            <form method="post" th:action="@{/}" >
+
+                <div style="text-align:center">
+
+                    <div class="inline-block_input">
+                        <p>最大分子</p>
+                        <input type="text" name="max_numerator"> 
+                    </div>
+
+
+                    <div class="inline-block_input">
+                        <p>最大分母</p>
+                        <input type="text" name="max_denominator">
+                    </div>
+                   
+                </div>
+
+                 <button class="button_input" id="button" type="submit" name=current_time value="" onclick=setTime()>Start</button>
+
+            </form>
+
+    </body>
+
+    <!-- 現在の時間を求めるjavascript -->
+    <script>
+        function setTime(){
+            document.getElementById( "button" ).value=new Date().getTime()+60000;
+        }
+    </script>
+
+</html>

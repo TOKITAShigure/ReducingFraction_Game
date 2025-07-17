@@ -1,0 +1,103 @@
+@font-face{
+    font-family:'font';
+    src:url("/MPLUSRounded1c-ExtraBold.ttf") format('truetype');
+}
+
+
+body{
+    background-image:url(/sea.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    color:black;
+    font-family:'font';
+}
+
+
+p{
+    font-size:4em;
+}
+
+
+input{
+    opacity:0.7;
+    width:15em;
+    height:2em;
+}
+
+
+.block_correct{
+    display: block;
+    background-image:url("correct.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+
+.block_incorrect{
+    display:block;
+    background-image:url("incorrect.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+
+.button_input{
+    width:10em;
+    height:3.5em;
+    opacity:0.7;
+    font-size:150%;
+    font-family:'font';
+    display:block;
+    margin:0 auto;
+}
+
+
+.timer{
+    text-align:right;
+    font-size:2em;
+}
+
+
+.number{
+    font-size:4em;
+}
+
+.score{
+    font-size:5.5em;
+}
+
+
+.score_num{
+    font-size:5em;
+}
+
+
+.button_judge{
+    width:14em;
+    height:3.5em;
+    opacity:0.7;
+    font-size:120%;
+    font-family:'font';
+    display:inline-block;
+    margin-right:1em;
+    margin-left:1em;
+
+}
+
+
+.button_finish{
+    width:10em;
+    height:4em;
+    opacity:0.7;
+    font-size:140%;
+    font-family:'font';
+}
+
+
+.inline-block_input {
+    display: inline-block;     
+    padding:5em;
+}
