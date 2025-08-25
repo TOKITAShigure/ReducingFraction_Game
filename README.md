@@ -1,10 +1,10 @@
 # 約分できるか判定するゲーム
 
-## ツールとバージョン
+## 使用技術 
 
-jdk 20
-springboot 3.4.7
-Apache Maven 4.0.0
+![Static Badge](https://img.shields.io/badge/Maven-red%3Fstyle%3Dflat%26logo%3Dapachemaven)
+
+
 
 ## 遊び方
 
