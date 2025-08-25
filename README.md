@@ -2,9 +2,11 @@
 
 ## 使用技術 
 
-![Static Badge](https://img.shields.io/badge/Maven-red%3Fstyle%3Dflat%26logo%3Dapachemaven)
-
-
+![Static Badge](https://img.shields.io/badge/Maven-4.0.0-red?style=flat&logo=apachemaven)
+![Static Badge](https://img.shields.io/badge/springboot-3.4.7-green?style=flat&logo=springboot)
+![Static Badge](https://img.shields.io/badge/java-20-blue?style=flat)
+![Static Badge](https://img.shields.io/badge/html-black?style=flat&logo=html5)
+![Static Badge](https://img.shields.io/badge/javascript-blue?style=flat&logo=javascript)
 
 ## 遊び方
 
